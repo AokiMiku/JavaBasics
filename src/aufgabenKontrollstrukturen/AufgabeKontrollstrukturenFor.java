@@ -10,48 +10,48 @@ public class AufgabeKontrollstrukturenFor {
 		}
 		System.out.println();
 		
-		for (int j = 0; j < 10; j++)
+		for (int i = 0; i < 10; i++)
 		{
-			if (j != 1)
+			if (i != 1)
+			{
+				System.out.print(i + " ");
+			}
+		}
+		System.out.println();
+		
+		for (int i = -4; i <= 50; i += 2)
+		{
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
+		for (int i = 'a'; i <= 'z'; i++)
+		{
+			System.out.print((char)i + " ");
+		}
+		System.out.println();
+		
+		for (int i = 'Z'; i >= 'A'; i--)
+		{
+			System.out.print((char)i + " ");
+		}
+		System.out.println();
+		
+		for (int i = 1; i <= 100; i++)
+		{
+			if (i % 5 == 0)
+			{
+				System.out.print(i + " ");
+			}
+		}
+		System.out.println();
+		
+		for (int i = 3; i > 0; i--)
+		{
+			System.out.print(i + " ");
+			for (int j = 1; j <= i; j++)
 			{
 				System.out.print(j + " ");
-			}
-		}
-		System.out.println();
-		
-		for (int k = -4; k <= 50; k += 2)
-		{
-			System.out.print(k + " ");
-		}
-		System.out.println();
-		
-		for (int l = 'a'; l <= 'z'; l++)
-		{
-			System.out.print((char)l + " ");
-		}
-		System.out.println();
-		
-		for (int m = 'Z'; m >= 'A'; m--)
-		{
-			System.out.print((char)m + " ");
-		}
-		System.out.println();
-		
-		for (int n = 1; n <= 100; n++)
-		{
-			if (n % 5 == 0)
-			{
-				System.out.print(n + " ");
-			}
-		}
-		System.out.println();
-		
-		for (int o = 3; o > 0; o--)
-		{
-			System.out.print(o + " ");
-			for (int p = 1; p <= o; p++)
-			{
-				System.out.print(p + " ");
 			}
 		}
 		System.out.println();
