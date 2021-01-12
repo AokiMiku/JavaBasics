@@ -108,6 +108,10 @@ public class AufgabenKontrollstrukturen {
 		    {
 		    	System.out.print(tag + " ");
 		    }
+	    	if (monat == 2)
+	    	{
+	    		System.out.print("(29)");
+	    	}
 		    System.out.println();
 		}
 	}
