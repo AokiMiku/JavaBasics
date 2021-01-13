@@ -5,8 +5,6 @@ import java.util.Random;
 public class AufgabenSwitch {
 	public static void main(String[] args) {
 	
-		char ch = 'a';
-		
 		System.out.println(vokalOderKonsonant('ä'));
 		System.out.println(vokalOderKonsonant('ö'));
 		System.out.println(vokalOderKonsonant('ü'));
@@ -17,9 +15,6 @@ public class AufgabenSwitch {
 			System.out.println(vokalOderKonsonant((char)getRandomNumber('A', 'Z')));
 			System.out.println(vokalOderKonsonant((char)getRandomNumber('a', 'z')));
 		}
-		
-		
-		
 	}
 	
 	public static String vokalOderKonsonant(char ch)
@@ -43,6 +38,16 @@ public class AufgabenSwitch {
 				case 'ü':
 					ausgabe = String.format("Der Buchstabe %s ist ein Vokal.", ch);
 					break;
+				case 'A':
+				case 'E':
+				case 'I':
+				case 'O':
+				case 'U':
+				case 'Ä':
+				case 'Ö':
+				case 'Ü':
+					ausgabe = String.format("Der Buchstabe %s ist ein Vokal.", ch);
+					break;
 				default:
 					ausgabe = String.format("Der Buchstabe %s ist ein Konsonant.", ch);
 			}
@@ -50,7 +55,7 @@ public class AufgabenSwitch {
 		}
 		else
 		{
-			ausgabe = "Kein gültiger Wert: " + ch;			
+			ausgabe = "Kein gültiger Wert: " + ch;
 		}
 		
 		return ausgabe;
