@@ -22,4 +22,8 @@ public class AufgabeUeberladen
 		return zahl1 > zahl2 ? zahl1 : zahl2;
 	}
 
+	public static int getMax(int zahl1, int zahl2, int zahl3)
+	{
+		return getMax(getMax(zahl1, zahl2), zahl3); 
+	}
 }
