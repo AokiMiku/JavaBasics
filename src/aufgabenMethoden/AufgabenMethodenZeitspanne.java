@@ -1,12 +1,12 @@
 package aufgabenMethoden;
 
-import java.util.Calendar;
-
 public class AufgabenMethodenZeitspanne 
 {
 	public static void main(String[] args) 
 	{
+		System.out.println(getZeitspanneInGanzenTagen(new Date(15,9,2021), new Date(14,2,2022)));
 		System.out.println(getZeitspanneInGanzenTagen(new Date(14,2,2022), new Date(15,9,2021)));
+		System.out.println(getZeitspanneInGanzenTagen(new Date(19,9,2021), new Date(15,9,2021)));
 	}
 	
 	static int getZeitspanneInGanzenTagen(Date tag1, Date tag2)
@@ -163,46 +163,24 @@ class Date
 	
 	public static int DaySpan(Date left, Date right)
 	{
-		int result = 0;
+		int daySpan = 0;
 		
 		// rechtes Jahr groesser
 		if (left.getYear() < right.getYear())
 		{
-			if (left.getMonth() < right.getMonth() || left.getMonth() == right.getMonth())
+			while (!left.equals(right))
 			{
-				while (!left.equals(right))
-				{
-					result++;
-					right.setDay(right.getDay() - 1);
-				}
-			}
-			else if (left.getMonth() > right.getMonth())
-			{
-				while (!left.equals(right))
-				{
-					result++;
-					right.setDay(right.getDay() + 1);
-				}
+				daySpan++;
+				right.setDay(right.getDay() - 1);
 			}
 		}
 		// linkes Jahr groesser
 		else if (left.getYear() > right.getYear())
 		{
-			if (left.getMonth() > right.getMonth() || left.getMonth() == right.getMonth())
+			while (!left.equals(right))
 			{
-				while (!left.equals(right))
-				{
-					result++;
-					left.setDay(left.getDay() - 1);
-				}
-			}
-			else if(left.getMonth() < right.getMonth())
-			{
-				while (!left.equals(right))
-				{
-					result++;
-					right.setDay(right.getDay() + 1);
-				}
+				daySpan++;
+				left.setDay(left.getDay() - 1);
 			}
 		}
 		// gleiches Jahr
@@ -216,7 +194,7 @@ class Date
 			{
 				while (!left.equals(right))
 				{
-					result++;
+					daySpan++;
 					right.setDay(right.getDay() - 1);
 				}
 			}
@@ -224,13 +202,13 @@ class Date
 			{
 				while (!left.equals(right))
 				{
-					result++;
+					daySpan++;
 					right.setDay(right.getDay() + 1);
 				}
 			}
 		}
 		
-		return result;
+		return daySpan;
 	}
 	
 	public boolean IstSchaltjahr(int year)
