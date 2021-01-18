@@ -3,7 +3,13 @@ package aufgabenMethoden;
 public class Rekursion {
 	public static void main(String[] args) {
 		
-		System.out.println(sumOneTo(5));
+		int to = aufgabenKontrollstrukturen.AufgabenSwitch.getRandomNumber(2, 9);
+		
+		for (int i = 0; i < 10; i++)
+		{
+			to = aufgabenKontrollstrukturen.AufgabenSwitch.getRandomNumber(2, 9);
+			System.out.println("Summe aller Zahlen von 1 bis " + to + ": " + sumOneTo(to));
+		}
 		
 	}
 	
