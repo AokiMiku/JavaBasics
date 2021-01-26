@@ -1,6 +1,7 @@
 package aufgabenArrays;
 
 import java.util.Arrays;
+import basics.RandomGenerator;
 
 class Kreis
 {
@@ -26,7 +27,7 @@ public class AufgabenKreiseArrays
 		
 		for (int i = 0; i < kreise.length; i++)
 		{
-			kreise[i] = new Kreis(basics.RandomGenerator.getRandomNumber(1, 20));
+			kreise[i] = new Kreis(RandomGenerator.getRandomNumber(1, 20));
 		}
 
 
