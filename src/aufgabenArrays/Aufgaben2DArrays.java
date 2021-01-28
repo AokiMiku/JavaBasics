@@ -1,7 +1,5 @@
 package aufgabenArrays;
 
-import java.util.Iterator;
-
 public class Aufgaben2DArrays 
 {
 	public static void main(String[] args) 
@@ -53,12 +51,12 @@ public class Aufgaben2DArrays
 	}
 	
 	// A2
-	static void printArray(Object[][] arr)
+	static <T> void printArray(Object[][] arr)
 	{
 		printArray(arr, true);
 	}
 	
-	static void printArray(Object[][] arr, boolean comma)
+	static <T> void printArray(T[][] arr, boolean comma)
 	{
 		for (int i = 0; i < arr.length; i++)
 		{
