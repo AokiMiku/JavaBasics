@@ -11,11 +11,6 @@ public class Matrix
 		System.out.println("m1:\n" + m1);
 		System.out.println("m2:\n" + m2);
 		System.out.println("m3:\n" + m3);
-		//System.out.println("m1.get(1, 2): " + m1.get(1, 2));
-		//System.out.println("m2.get(1, 2): " + m2.get(1, 2));
-		//System.out.println("m3.get(1, 2): " + m3.get(1, 2));
-		
-		//System.out.println("m1.equals(m2): " + m1.equals(m2));
 		
 		System.out.println("m2.add(m1):\n" + m2.add(m1));
 		System.out.println("m2.substract(m1):\n" + m2.substract(m1));
@@ -28,5 +23,11 @@ public class Matrix
 		arr[1] = new IntMatrix(3, 2, 6);
 		System.out.println("arr[0]:\n" + arr[0]);
 		System.out.println("arr[1]:\n" + arr[1]);
+		
+		System.out.println("m1.get(1, 2): " + m1.get(1, 2));
+		System.out.println("m2.get(1, 2): " + m2.get(1, 2));
+		System.out.println("m3.get(1, 2): " + m3.get(1, 2));
+		
+		System.out.println("m1.equals(m2): " + m1.equals(m2));
 	}
 }
