@@ -15,7 +15,7 @@ class Kurs
 	}
 }
 
-class Person
+class PersonInKurs
 {
 	private String name;
 	private String id;
@@ -47,7 +47,7 @@ class Person
 		this.kurs = value;
 	}
 	
-	public Person(String name, String id)
+	public PersonInKurs(String name, String id)
 	{
 		this.name = name;
 		this.id = id;
@@ -68,29 +68,39 @@ class Person
 	}
 }
 
-class Dozent extends Person
+class Dozent extends PersonInKurs
 {
 	public Dozent(String name)
 	{
-		super (name, Person.getNewUniqueId());
+		super (name, PersonInKurs.getNewUniqueId());
 	}
 	
 	public String toString()
 	{
+		if (this.getKurs() == null)
+		{
+			return String.format("%s leitet keinen Kurs und hat die ID %s.", 
+					this.getName(), this.getId());
+		}
 		return String.format("%s leitet den Kurs mit der Nummer %d und hat die ID %s.", 
 							this.getName(), this.getKurs().getNummer(), this.getId());
 	}
 }
 
-class Teilnehmer extends Person
+class Teilnehmer extends PersonInKurs
 {
 	public Teilnehmer(String name)
 	{
-		super (name, Person.getNewUniqueId());
+		super (name, PersonInKurs.getNewUniqueId());
 	}
 	
 	public String toString()
 	{
+		if (this.getKurs() == null)
+		{
+			return String.format("%s nimmt an keinem Kurs teil und hat die ID %s.", 
+					this.getName(), this.getId());
+		}
 		return String.format("%s nimmt an dem Kurs mit der Nummer %d teil und hat die ID %s.", 
 							this.getName(), this.getKurs().getNummer(), this.getId());
 	}
