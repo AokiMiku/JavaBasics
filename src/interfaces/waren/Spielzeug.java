@@ -2,17 +2,34 @@ package interfaces.waren;
 
 public class Spielzeug extends Ware implements Verleihbar
 {
-	int mindestalter;
+	private int mindestalter;
+	private int verleihpreis;
 
-	public Spielzeug(String bezeichnung, int preis, int mindestalter) {
-		super(bezeichnung, preis);
+	public int getMindestalter() 
+	{
+		return mindestalter;
+	}
+
+	public void setMindestalter(int mindestalter) 
+	{
 		this.mindestalter = mindestalter;
 	}
 
+	public Spielzeug(String bezeichnung, int preis, int mindestalter) {
+		super(bezeichnung, preis);
+		this.setMindestalter(mindestalter);
+	}
+
 	@Override
-	public int getVerleihPreis() 
+	public double getVerleihpreis() 
 	{
-		return 200;
+		return this.verleihpreis / 100.;
+	}
+
+	@Override
+	public void setVerleihpreis(int preis) 
+	{
+		this.verleihpreis = preis * 100;
 	}
 	
 }

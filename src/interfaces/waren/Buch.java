@@ -3,6 +3,7 @@ package interfaces.waren;
 public class Buch extends Ware implements Verleihbar
 {
 	private String autor;
+	private int verleihpreis;
 
 	public String getAutor() 
 	{
@@ -26,8 +27,14 @@ public class Buch extends Ware implements Verleihbar
 	}
 
 	@Override
-	public int getVerleihPreis() 
+	public double getVerleihpreis() 
 	{
-		return 200;
+		return this.verleihpreis;
+	}
+
+	@Override
+	public void setVerleihpreis(int preis) 
+	{
+		this.verleihpreis = preis;
 	}
 }

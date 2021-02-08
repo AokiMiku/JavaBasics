@@ -1,6 +1,6 @@
 package interfaces.waren;
 
-public class Ware 
+public class Ware implements Comparable<Ware>
 {
 	private String bezeichnung;
 	private int preis;
@@ -35,5 +35,13 @@ public class Ware
 	public String toString()
 	{
 		return String.format("%s: %s, Preis: %.2f", this.getClass().getSimpleName(), this.getBezeichnung(), this.getPreis() / 100.0);
+	}
+
+	@Override
+	public int compareTo(Ware ware) 
+	{
+		//return this.bezeichnung.compareTo(ware.bezeichnung);
+		
+		return (this.preis - ware.preis) * -1;
 	}
 }

@@ -4,5 +4,7 @@ public interface Verleihbar
 {
 	int VERLEIHDAUER = 7;
 	
-	int getVerleihPreis();
+	double getVerleihpreis();
+	
+	void setVerleihpreis(int preis);
 }
