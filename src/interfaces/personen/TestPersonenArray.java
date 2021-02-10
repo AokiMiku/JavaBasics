@@ -1,5 +1,7 @@
 package interfaces.personen;
 
+import interfaces.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -57,8 +59,9 @@ public class TestPersonenArray
 		stringListe.sort(null); // seit Java 8, null für natürliche Sortierung (Comparable)
 		stringListe.sort(Comparator.naturalOrder()); // seit Java 8, null für natürliche Sortierung (Comparable)
 		// Sortierung absteigend
-		//stringListe.sort(new StringReverseComparator());
-		stringListe.sort((s1, s2) -> (s1.compareTo(s2)) * -1);
+		// stringListe.sort(new StringReverseComparator());
+		// stringListe.sort((s1, s2) -> (s1.compareTo(s2)) * -1);
+		stringListe.removeIf(new PredicateStringGreater5());
 		System.out.println("******");
 		for (String name : stringListe) {
 			System.out.println(name);
