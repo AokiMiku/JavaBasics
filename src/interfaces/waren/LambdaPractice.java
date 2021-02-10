@@ -33,5 +33,28 @@ public class LambdaPractice
 		warenListe.removeIf(ware -> ware.getPreis() > 2000);
 		
 		warenListe.forEach(System.out::println);
+		System.out.println("***************");
+		
+		final int MAX = 10_000; // 1_000_000; // String: 477431 ms; StringBuilder: 20 ms
+		long start = System.currentTimeMillis();
+		String log = "";
+		for (int i = 0; i < MAX; i++) 
+		{
+			log += "X";
+		}
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
+		
+		start = System.currentTimeMillis();
+		StringBuilder sbLog = new StringBuilder();
+		for (int i = 0; i < MAX; i++) 
+		{
+			sbLog.append("X");
+		}
+		end = System.currentTimeMillis();
+		
+		System.out.println(end - start);
+		System.out.println(sbLog.length());
+		System.out.println(sbLog);
 	}
 }
