@@ -12,10 +12,11 @@ public class LambdaPractice
 		Buch buch1 = new Buch("Herr der Ringe", 1990, "Tolkien");
 		Spielzeug spielzeug1 = new Spielzeug("Playmobil Ritterburg", 5900, 6);
 		Buch buch2 = new Buch("Java 10 ist eine Insel", 4900, "Christian Ullenboom");
-		Ware buch3 = new Buch("Java  8 - Die Neuerungen", 2490, "Michael Inden");
+		Ware buch3 = new Buch("JAVA  8 - Die Neuerungen", 2490, "Michael Inden");
 		Spielzeug spielzeug2 = new Spielzeug("Lego Ninja 2", 3950, 9);
 		Spielzeug spielzeug3 = new Spielzeug("Cluedo", 3995, 8);
-		Lebensmittel kaffee = new Lebensmittel("Kaffee", 690, 30);
+		Lebensmittel kaffee = new Lebensmittel("Java Kaffee", 690, 30);
+		Lebensmittel schokolade = new Lebensmittel("Milka Schokolade", 90, 550);
 		
 		warenListe.add(eis);
 		warenListe.add(buch1);
@@ -25,33 +26,38 @@ public class LambdaPractice
 		warenListe.add(spielzeug2);
 		warenListe.add(spielzeug3);
 		warenListe.add(kaffee);
+		warenListe.add(schokolade);
 		
 		warenListe.forEach(System.out::println);
 		System.out.println("***************");
 		
 		// Löschen aller Waren mit einem Preis größer als 2000 Cent
-		warenListe.removeIf(ware -> ware.getPreis() > 2000);
+		//warenListe.removeIf(ware -> ware.getPreis() > 2000);
+		
+		// Löschen aller Waren mit Kalorien ab 500
+		warenListe.removeIf(ware -> ware instanceof Lebensmittel && ((Lebensmittel)ware).getKalorien() >= 500);
 		
 		warenListe.forEach(System.out::println);
 		System.out.println("***************");
 		
-		final int MAX = 10_000; // 1_000_000; // String: 477431 ms; StringBuilder: 20 ms
-		long start = System.currentTimeMillis();
-		String log = "";
-		for (int i = 0; i < MAX; i++) 
-		{
-			log += "X";
-		}
-		long end = System.currentTimeMillis();
-		System.out.println(end - start);
 		
-		start = System.currentTimeMillis();
+		final int MAX = 20; // 1_000_000; // String: 477431 ms; StringBuilder: 20 ms
+		//long start = System.currentTimeMillis();
+		//String log = "";
+		//for (int i = 0; i < MAX; i++) 
+		//{
+		//	log += "X";
+		//}
+		//long end = System.currentTimeMillis();
+		//System.out.println(end - start);
+		
+		long start = System.currentTimeMillis();
 		StringBuilder sbLog = new StringBuilder();
 		for (int i = 0; i < MAX; i++) 
 		{
 			sbLog.append("X");
 		}
-		end = System.currentTimeMillis();
+		long end = System.currentTimeMillis();
 		
 		System.out.println(end - start);
 		System.out.println(sbLog.length());
