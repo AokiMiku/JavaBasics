@@ -1,6 +1,5 @@
 package aufgabenArrays;
 
-import java.util.Arrays;
 import basics.RandomGenerator;
 
 class Kreis

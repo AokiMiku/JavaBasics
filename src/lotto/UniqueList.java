@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class UniqueList<E> extends ArrayList<E> 
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5075196361699225408L;
+
 	public int countOf(E element)
 	{
 		int countOf = 0;

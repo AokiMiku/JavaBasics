@@ -1,6 +1,7 @@
 package basics;
 
 public class ElementareDatentypen {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		/*
 		 * Zahlentypen
