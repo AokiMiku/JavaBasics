@@ -23,10 +23,12 @@ public class JavaTime
 		eingabeDatum = "2021-02-01"; // true
 		//eingabeDatum = "2021-2-1"; // false
 		
-		if (check(eingabeDatum)) {
-		rechnungsdatum = LocalDate.parse(eingabeDatum);
-		System.out.println("Rechnungsdatum: " + rechnungsdatum);
-		} else {
+		if (check(eingabeDatum)) 
+		{
+			rechnungsdatum = LocalDate.parse(eingabeDatum);
+			System.out.println("Rechnungsdatum: " + rechnungsdatum);
+		} else 
+		{
 			System.out.println("Ungültiges Datum");
 		}
 		
