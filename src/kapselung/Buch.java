@@ -2,7 +2,7 @@ package kapselung;
 
 import java.time.LocalDate;
 
-public class Buch 
+public class Buch implements Comparable<Buch>
 {
 	private static final int MIN_ERSCHEINUNGSJAHR = 1800; 
 	
@@ -158,5 +158,11 @@ public class Buch
 	{
 		return String.format("Buch ISBN: %s, Autor: %s, Titel: %s, Erscheinungsjahr: %d, Preis: %,.2f €, Beschreibung: %s", 
 								this.isbn, this.autor, this.titel, this.erscheinungsjahr, this.preis / 100., this.beschreibung);
+	}
+
+	@Override
+	public int compareTo(Buch b) 
+	{
+		return this.autor.compareTo(b.autor);
 	}
 }
