@@ -29,7 +29,7 @@ class IllegalToppingsCountException extends RuntimeException
 
 class Pizza
 {
-	public static int toppingCount = 3;
+	public static final int toppingCount = 3;
 	String[] belaege = new String[toppingCount];
 	
 	public Pizza(String[] belaege) 
@@ -43,13 +43,13 @@ class Pizza
 	@Override
 	public String toString() 
 	{		
-		String toString = "Pizza with ";
+		String toString = "Pizza mit ";
 		
 		for (int i = 0; i < this.belaege.length; i++) 
 		{
 			if (i == this.belaege.length - 1)
 			{
-				toString += "and " + this.belaege[i] + ".";
+				toString += "und " + this.belaege[i] + ".";
 			}
 			else
 			{
