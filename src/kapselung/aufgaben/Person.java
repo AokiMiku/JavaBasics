@@ -1,8 +1,9 @@
 package kapselung.aufgaben;
 
 import java.time.LocalDate;
+import java.time.Period;
 
-public class Person 
+public class Person implements Comparable<Person>
 {
 	private String vorname;
 	private String nachname;
@@ -45,15 +46,7 @@ public class Person
 	
 	public int getAlter()
 	{
-		int alter = LocalDate.now().getYear() - this.geburtsdatum.getYear();
-		
-		if (LocalDate.now().getMonthValue() < this.geburtsdatum.getMonthValue()
-				|| (LocalDate.now().getMonthValue() == this.geburtsdatum.getMonthValue()
-					&& LocalDate.now().getDayOfMonth() < this.geburtsdatum.getDayOfMonth()))
-		{
-			alter -= 1;
-		}
-		return alter;
+		return Period.between(geburtsdatum, LocalDate.now()).getYears();
 	}
 	
 	public String getPlz() 
@@ -106,5 +99,17 @@ public class Person
 		{
 			System.out.println("über 50");
 		}
+	}
+	
+	public boolean hatGeburtstag()
+	{
+		Period p = Period.between(geburtsdatum, LocalDate.now());
+		return (p.getMonths() == 0 && p.getDays() == 0);
+	}
+
+	@Override
+	public int compareTo(Person p) 
+	{
+		return this.getNachname().compareTo(p.getNachname());
 	}
 }

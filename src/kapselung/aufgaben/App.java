@@ -1,6 +1,7 @@
 package kapselung.aufgaben;
 
-import java.time.LocalDate;
+import java.time.*;
+import java.util.*;
 
 public class App 
 {
@@ -27,5 +28,20 @@ public class App
 		
 		System.out.println(muster);
 		Person.testAlter(muster.getAlter());
+
+		System.out.println("****************");
+		
+		List<Person> personenListe = Arrays.asList(new Person[] { miku, tosh, cynthia, muster });
+		personenListe.forEach(System.out::println);
+		
+		System.out.println("****************");
+		
+		personenListe.sort(Comparator.naturalOrder());
+		personenListe.forEach(System.out::println);
+		
+		System.out.println("****************");
+		
+		personenListe.sort(Comparator.comparing(Person::getGeburtsdatum));
+		personenListe.forEach(System.out::println);
 	}
 }
