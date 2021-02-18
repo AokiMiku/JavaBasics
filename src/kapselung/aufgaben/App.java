@@ -1,16 +1,19 @@
 package kapselung.aufgaben;
 
+import java.time.LocalDate;
+
 public class App 
 {
 	public static void main(String[] args) 
 	{
-		Person miku = new Person("Miku", "M.", 27, "32156");
-		Person tosh = new Person("Toshio", "S.", 28, "35642");
+		Person miku = new Person("Miku", "M.", LocalDate.of(1993, 12, 30), "32156");
+		Person tosh = new Person("Toshio", "S.", LocalDate.of(1992, 3, 7), "35642");
+		Person muster = new Person("Max", "Mustermann", LocalDate.of(1963, 1, 13), "54689");
 		
 		Person cynthia = new Person();
 		cynthia.setVorname("Cynthia");
 		cynthia.setNachname("L.");
-		cynthia.setAlter(22);
+		cynthia.setGeburtsdatum(LocalDate.of(1998, 3, 27));
 		cynthia.setPlz("35462");
 		
 		System.out.println(miku);
@@ -21,5 +24,8 @@ public class App
 		
 		System.out.println(cynthia);
 		Person.testAlter(cynthia.getAlter());
+		
+		System.out.println(muster);
+		Person.testAlter(muster.getAlter());
 	}
 }

@@ -1,10 +1,12 @@
 package kapselung.aufgaben;
 
+import java.time.LocalDate;
+
 public class Person 
 {
 	private String vorname;
 	private String nachname;
-	private int alter;
+	private LocalDate geburtsdatum;
 	private String plz;
 	
 	public String getVorname() 
@@ -27,19 +29,31 @@ public class Person
 		this.nachname = nachname;
 	}
 	
-	public int getAlter()
+	public LocalDate getGeburtsdatum()
 	{
-		return alter;
+		return LocalDate.of(this.geburtsdatum.getYear(), this.geburtsdatum.getMonth(), this.geburtsdatum.getDayOfMonth());
 	}
 	
-	public void setAlter(int alter) 
+	public void setGeburtsdatum(LocalDate geburtsdatum)
 	{
-		if (alter < 0)
+		if (geburtsdatum.isAfter(LocalDate.now()))
 		{
-			throw new IllegalArgumentException("Alter darf nicht kleiner 0 sein! " + alter);
+			throw new IllegalArgumentException("Geburtsdatum darf nicht in der Zukunft liegen!");
 		}
+		this.geburtsdatum = geburtsdatum;
+	}
+	
+	public int getAlter()
+	{
+		int alter = LocalDate.now().getYear() - this.geburtsdatum.getYear();
 		
-		this.alter = alter;
+		if (LocalDate.now().getMonthValue() < this.geburtsdatum.getMonthValue()
+				|| (LocalDate.now().getMonthValue() == this.geburtsdatum.getMonthValue()
+					&& LocalDate.now().getDayOfMonth() < this.geburtsdatum.getDayOfMonth()))
+		{
+			alter -= 1;
+		}
+		return alter;
 	}
 	
 	public String getPlz() 
@@ -68,11 +82,11 @@ public class Person
 	
 	public Person() {}
 
-	public Person(String vorname, String nachname, int alter, String plz) 
+	public Person(String vorname, String nachname, LocalDate geburtsdatum, String plz) 
 	{
 		this.setVorname(vorname);
 		this.setNachname(nachname);
-		this.setAlter(alter);
+		this.setGeburtsdatum(geburtsdatum);
 		this.setPlz(plz);
 	}
 	
