@@ -11,7 +11,7 @@ public class RecursionTest
 
 	private static long berechneFakultaet(int zahl) 
 	{
-		if (zahl == 1)
+		if (zahl == 0 || zahl == 1)
 		{
 			return zahl;
 		}
