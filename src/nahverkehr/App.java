@@ -6,9 +6,9 @@ public class App
 	{
 		Bus b1 = new Bus(130, "Smith", "S Stresow", "Waldkrankenhaus", 99);
 		Bus b2 = new Bus(130, "Menzel", "Waldkrankenhaus","S Stresow", 99);
-		SBahn s1 = new SBahn(9, "Leßner", "S Spandau", "S Mahlsdorf", "Sokolski", 4, 150);
+//		SBahn s1 = new SBahn(9, "Leï¿½ner", "S Spandau", "S Mahlsdorf", "Sokolski", 4, 150);
 		
 		System.out.println(b1.equals(b2));
-		System.out.println(b1.equals(s1));
+//		System.out.println(b1.equals(s1));
 	}
 }
