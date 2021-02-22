@@ -84,7 +84,7 @@ public class PizzaService
 					break;
 				case "artischocken":
 					break;
-				case "k‰se":
+				case "k√§se":
 					break;
 				case "brokkoli":
 					break;
