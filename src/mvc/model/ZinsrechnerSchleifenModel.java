@@ -29,7 +29,7 @@ public class ZinsrechnerSchleifenModel implements IZinsrechnerModel
 		laufzeit--;
 		
 		double laufzeitEnde = this.berechneEndkapital(startkapital, (int)laufzeit + 1, zinsPA);
-		double laufzeitStart = this.berechneEndkapital(startkapital, (int)laufzeit, zinsPA);
+		double laufzeitStart = this.berechneEndkapital(startkapital, (int)laufzeit, zinsPA);//
 		double diff = laufzeitEnde - laufzeitStart;
 		double diffStartEnde = endkapital - laufzeitStart;
 		

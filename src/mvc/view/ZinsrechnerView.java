@@ -157,20 +157,20 @@ public class ZinsrechnerView extends JFrame
 		this.pnlInhalt.add(this.txtStartkapital, c);
 		
 		c.gridx = 0;
-		c.gridy = 1;		
-		this.pnlInhalt.add(this.lblLaufzeit, c);
-		
-		c.gridx = 2;
-		c.gridy = 1;		
-		this.pnlInhalt.add(this.txtLaufzeit, c);
-		
-		c.gridx = 0;
 		c.gridy = 2;		
 		this.pnlInhalt.add(this.lblZinsPA, c);
 		
 		c.gridx = 2;
 		c.gridy = 2;		
 		this.pnlInhalt.add(this.txtZinsPA, c);
+		
+		c.gridx = 0;
+		c.gridy = 1;		
+		this.pnlInhalt.add(this.lblLaufzeit, c);
+		//
+		c.gridx = 2;
+		c.gridy = 1;		
+		this.pnlInhalt.add(this.txtLaufzeit, c);
 		
 		c.gridx = 0;
 		c.gridy = 3;		

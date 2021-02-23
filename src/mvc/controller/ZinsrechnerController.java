@@ -24,7 +24,7 @@ public class ZinsrechnerController extends WindowAdapter implements ActionListen
 		double endkapital = 0;
 		double startkapital = Double.parseDouble(this.view.getTxtStartkapital().getText().replace(",", "."));
 		float zinsPA = Float.parseFloat(this.view.getTxtZinsPA().getText().replace(",", "."));
-		switch (modus)
+		switch (modus)//
 		{
 			case 0:
 				this.view.getTxtKapitalProJahr().setText("");

@@ -12,6 +12,6 @@ public class ZinsrechnerMatheModel implements IZinsrechnerModel
 	@Override
 	public double berechneLaufzeit(double startkapital, float zinsPA, double endkapital) 
 	{
-		return Math.log(endkapital / startkapital) / Math.log(1 + zinsPA / 100.);
+		return Math.log(endkapital / startkapital) / Math.log(1 + zinsPA / 100.);//
 	}
 }
