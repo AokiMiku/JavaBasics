@@ -38,6 +38,10 @@ public class ZinsrechnerView extends JFrame
 	private JPanel pnlText;
 	private JScrollPane spnText;
 	
+	private JMenuBar menuBar;
+	private JMenu menuInfo;
+	private JMenuItem mniInfo;
+	
 	private Color backgroundColor = new Color(20, 168, 121);
 	private Color fontColor = new Color(255, 255, 255);
 
@@ -104,6 +108,11 @@ public class ZinsrechnerView extends JFrame
 		return txtKapitalProJahr;
 	}
 
+	public JMenuItem getMniInfo() 
+	{
+		return mniInfo;
+	}
+
 	/**
 	 * 
 	 */
@@ -126,6 +135,11 @@ public class ZinsrechnerView extends JFrame
 	
 	public void initComponents()
 	{
+		this.menuBar = new JMenuBar();
+		this.menuInfo = new JMenu("Info");
+		this.mniInfo = new JMenuItem("Info");
+		this.getMniInfo().addActionListener(controller);
+		
 		this.lblEndkapital = new JLabel("Endkapital");
 		this.lblLaufzeit = new JLabel("Laufzeit in Jahren");
 		this.lblStartkapital = new JLabel("Startkapital");
@@ -176,6 +190,10 @@ public class ZinsrechnerView extends JFrame
 	
 	public void addComponents()
 	{
+		this.menuInfo.add(this.getMniInfo());
+		this.menuBar.add(this.menuInfo);
+		this.setJMenuBar(this.menuBar);
+		
 		this.pnlView.setLayout(new FlowLayout(FlowLayout.CENTER, 10000, 15));
 		this.pnlInhalt.setLayout(new GridLayout(5, 2, 20, 20));
 		this.pnlButtons.setLayout(new GridLayout(1, 3, 5, 5));
@@ -226,6 +244,16 @@ public class ZinsrechnerView extends JFrame
 		this.pnlText.setForeground(this.fontColor);
 
 		this.spnText.setBorder(null);
+		
+		// Menu ==================================================================
+		this.menuBar.setBackground(this.backgroundColor);
+		this.menuBar.setForeground(this.fontColor);
+		
+		this.menuInfo.setBackground(this.backgroundColor);
+		this.menuInfo.setForeground(this.fontColor);
+		
+		this.mniInfo.setBackground(this.backgroundColor);
+		this.mniInfo.setForeground(this.fontColor);
 		
 		// RadioButtons ==================================================================
 		this.rbEndkapital.setBackground(this.backgroundColor);

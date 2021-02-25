@@ -57,6 +57,11 @@ public class ZinsrechnerController extends WindowAdapter implements ActionListen
 			System.exit(0);
 		}
 	}
+	
+	private void showInfo()
+	{
+		JOptionPane.showMessageDialog(this.view, String.format("Zinsrechner%nAutorin: Melissa Miku Menzel"));
+	}
 
 	private int getModus()
 	{
@@ -125,6 +130,10 @@ public class ZinsrechnerController extends WindowAdapter implements ActionListen
 		else if (e.getSource() == this.view.getBtnLoeschen())
 		{
 			this.clearView();
+		}
+		else if (e.getSource() == this.view.getMniInfo())
+		{
+			this.showInfo();
 		}
 	}
 
